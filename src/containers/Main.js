@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import {Route,Switch,Redirect} from 'react-router-dom';
 import Header from '../component/header';
 import Footer from '../component/footer'
+import HomePage from './home';
 
 class Main extends Component {
     render() {
         const Home = () => {
             return (
-                <h2>Home Page</h2>
+                <HomePage />
             );
         }
         return (

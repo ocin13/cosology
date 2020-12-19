@@ -1,0 +1,31 @@
+.slider-images{
+    height: 75vh;
+    width: 100%;
+}
+.slider-caption{
+    text-align: left;
+    text-shadow: rgb(58, 56, 56) 2px 2px 8px;
+    width: 100%;
+}
+.caption{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+}
+.slider-caption h3{
+    line-height: 50px;
+    font-size: 2.9em;
+}
+.button-slider{
+    margin-left: auto;
+    text-shadow: rgb(58, 56, 56) 2px 2px 8px;
+    border-radius: 0;
+    border: none;
+    width: 160px;
+    height: 50px;
+    background-color: rgb(37, 4, 4);
+    margin-left: 50px;
+    float: right;
+    box-shadow: 2px 2px 8px black;
+}
