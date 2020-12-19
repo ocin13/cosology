@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+.navbar-site{
+    background-color: rgba(20, 4, 4, 0.973);
+}
+.nav-link{
+    text-decoration: none;
+    color: #fff;
+    transition: all ease-in-out 400ms;
+}
+.nav-link:hover{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.brandLink{
+    font-family: 'Satisfy', cursive;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #fff;
+}
+.brandLink:hover{
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 1px 1px 5px #fff;
+}
+#toggleButton{
+    color: #fff;
+}
+.navbar-icons{
+    font-size: 1.3em;
+}
