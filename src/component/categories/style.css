@@ -1,0 +1,39 @@
+.card-categories{
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+.card-categories:hover{
+    cursor: pointer;
+}
+.cart-categories-text{
+    color: black;
+    font-size: 1.6em;
+    letter-spacing: 5px;
+}
+.image-categories-card{
+    transition: all ease-in-out 600ms;
+}
+.card-categories:hover .image-categories-card{
+    transform: scale(1.2);
+}
+.card-categories:hover .red-line{
+    animation: stepLeft 1s ease-in-out reverse;
+    animation-fill-mode: forwards;
+}
+.red-line{
+    width: 300px;
+    height: 7px;
+    position: absolute;
+    background-color: brown;
+    top: 60px;
+    right: -300px;
+}
+@keyframes stepLeft {
+    0%{
+        right: -300px
+    }
+    0%{
+        right: 0px
+    }
+}

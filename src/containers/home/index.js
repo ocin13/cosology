@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Categories from '../../component/categories'
 import Slider from '../../component/slider'
 
 class HomePage extends Component {
@@ -6,6 +7,7 @@ class HomePage extends Component {
         return (
             <div className="container-fluid px-0">
                 <Slider />
+                <Categories />
             </div>
         )
     }
