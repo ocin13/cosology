@@ -1,0 +1,14 @@
+.newsletter-button{
+    border-radius: 0;
+    border: none;
+    background-color: rgb(231, 9, 65);
+}
+.newsletter{
+    background-color: rgb(27, 2, 2);
+}
+.newsletter h3{
+    color: white;
+}
+.input-email{
+    border-radius: 0;
+}
