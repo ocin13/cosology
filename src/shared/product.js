@@ -4,6 +4,7 @@ export const PRODUCTS = [
         name: 'waterproof',
         description: 'eyes, faces',
         price: '19.99$',
+        hot: true,
         featured: true,
         image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8bGlwc3RpY2t8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
     },
@@ -12,6 +13,7 @@ export const PRODUCTS = [
         name: 'waterproof',
         description: 'eyes, faces,',
         price: '19.99$',
+        hot: true,
         featured: false,
         image: 'https://images.unsplash.com/photo-1587303876752-91efb6315dcc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8bGlwc3RpY2t8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
     },
@@ -28,6 +30,7 @@ export const PRODUCTS = [
         name: 'waterproof',
         description: 'eyes, faces',
         price: '19.99$',
+        hot: true,
         featured: true,
         image: 'https://images.unsplash.com/photo-1600852306752-085ca3285361?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fGxpcHN0aWNrfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
     },
@@ -44,6 +47,7 @@ export const PRODUCTS = [
         name: 'waterproof',
         description: 'eyes, faces',
         price: '19.99$',
+        hot: true,
         featured: true,
         image: 'https://images.unsplash.com/photo-1591375462469-62f189694738?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzB8fGxpcHN0aWNrfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
     },

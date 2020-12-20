@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import {Card,CardBody,CardImg,CardText,CardTitle,CardLink,Button} from 'reactstrap'
 import './style.css';
 import Bounce from 'react-reveal/Bounce';
+import {Link} from 'react-router-dom';
 
 export default function ProductCard({product}) {
     const [Favorite, setFavorite] = useState(false)
@@ -17,12 +18,14 @@ export default function ProductCard({product}) {
             </div>
             <Bounce>
             <Card className="product-card px-5">
+               <Link className="website-links" to={`/products/${product.id}`}>
                 <CardImg src={product.image} alt={product.name} style={{height: '300px'}}/>
-                <CardBody>
-                    <smaller> {product.description} </smaller>
-                    <CardTitle> {product.name} </CardTitle>
-                    <h5> {product.price} </h5>
-                </CardBody>
+                    <CardBody>
+                        <small> {product.description} </small>
+                        <CardTitle> <strong>{product.name}</strong> </CardTitle>
+                        <h5> {product.price} </h5>
+                    </CardBody>
+                </Link>
             </Card>
             </Bounce>
             

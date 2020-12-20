@@ -1,0 +1,17 @@
+.product-image{
+    height: 500px;
+}
+.productQuantity{
+    border-radius: 0;
+    width: 100px;
+    height: 50px;
+}
+.addToCartButton{
+    border-radius: 0;
+    border: none;
+    background-color: rgb(14, 1, 1);
+    padding: 15px 50px;
+}
+.addToCartButton:hover{
+    background-color: rgb(228, 123, 123);
+}

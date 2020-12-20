@@ -5,12 +5,14 @@ import FeaturedProducts from '../../component/featured'
 import Promotions from '../../component/promotion'
 import FeaturedArticles from '../../component/featuredArticles'
 import NewsLetter from '../../component/newsletter'
+import Services from '../../component/services'
 
 class HomePage extends Component {
     render() {
         return (
             <div className="container-fluid px-0">
                 <Slider />
+                <Services />
                 <Categories />
                 <FeaturedProducts products={this.props.products}/>
                 <Promotions />
