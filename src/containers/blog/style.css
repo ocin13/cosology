@@ -1,0 +1,64 @@
+.blog-banner{
+    background-image: url(../../../src/shared/images/background-blog.webp);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 45vh;
+}
+.blog-banner-text{
+    color: #fff;
+    position: relative;
+    top: 60%;
+    text-align: center;
+}
+.blog-banner-text h2{
+    text-shadow: 2px 2px 5px black;
+}
+.navbar-blog{
+    padding: 50px 0;
+}
+.nav-link-blog {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 0.8em;
+    padding: 7px 15px;
+    border: 1px solid rgb(221, 219, 219);
+    border-radius: 25px;
+    box-shadow: rgb(73, 71, 71) 2px 2px 8px;
+    transition: all ease-in-out 400ms;
+}
+.nav-link-blog:hover {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 8px 18px;
+}
+.article-card-blog{
+    box-shadow: 2px 2px 8px gray;
+    margin-bottom: 20px;
+    border: none;
+}
+.article-card-image{
+    border-radius: 0;
+}
+.blog-list-name a{
+    text-decoration: none;
+    color: black;
+    transition: all ease-in-out 400ms;
+}
+.blog-list-name a:hover{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.about-card-image{
+    width: 70%;
+
+}
+.about-card-blog{
+    border: none;
+    box-shadow: 2px 2px 5px gray;
+}

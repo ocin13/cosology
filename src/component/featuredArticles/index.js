@@ -2,9 +2,9 @@ import React,{useState} from 'react'
 import './style.css';
 import {Card,CardBody,CardTitle,CardText,CardImg} from 'reactstrap';
 import Fade from 'react-reveal/Fade';
+import {Link} from 'react-router-dom'
 
-
-function ArticlesCard({article}){
+export function ArticlesCard({article}){
     const [FavoriteArticle, setFavoriteArticle] = useState(false)
     const addToFavorite = () => setFavoriteArticle(!FavoriteArticle)
     const d = new Date();
@@ -12,20 +12,22 @@ function ArticlesCard({article}){
     return(
         <Fade bottom>
             <Card className="article-card px-4">
-                <div className="row article-card-icons mx-auto">
-                    <div className="col-6" onClick={addToFavorite}>
-                        <i className="fa fa-heart" style={{color: `${FavoriteArticle? '#f00a71' : 'white'}`}}></i>
+                <Link to={`/blog/${article.id}`} className="website-links">
+                    <div className="row article-card-icons mx-auto">
+                        <div className="col-6" onClick={addToFavorite}>
+                            <i className="fa fa-heart" style={{color: `${FavoriteArticle? '#f00a71' : 'white'}`}}></i>
+                        </div>
+                        <div className="col-6">
+                            <i className="fa fa-eye"></i>
+                        </div>
                     </div>
-                    <div className="col-6">
-                        <i className="fa fa-eye"></i>
-                    </div>
-                </div>
-                <CardImg src={article.image} alt={article.title} className="article-card-image"/>
-                <CardBody>
-                    <CardTitle className="article-card-title"> <strong>{article.title}</strong> </CardTitle>
-                    <CardText> {article.text.slice(0,85)} </CardText>
-                    <small className="text-danger">published by :  <strong>{article.author} </strong>--- date : <strong>{date}</strong></small>
-                </CardBody>
+                    <CardImg src={article.image} alt={article.title} className="article-card-image"/>
+                    <CardBody>
+                        <CardTitle className="article-card-title"> <strong>{article.title}</strong> </CardTitle>
+                        <CardText> {article.text.slice(0,85)} </CardText>
+                        <small className="text-danger">published by :  <strong>{article.author} </strong>--- date : <strong>{date}</strong></small>
+                    </CardBody>
+                </Link>
             </Card>
         </Fade>
     )

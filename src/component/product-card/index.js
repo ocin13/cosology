@@ -21,7 +21,7 @@ export default function ProductCard({product}) {
                <Link className="website-links" to={`/products/${product.id}`}>
                 <CardImg src={product.image} alt={product.name} style={{height: '300px'}}/>
                     <CardBody>
-                        <small> {product.description} </small>
+                        <small> {product.category} </small>
                         <CardTitle> <strong>{product.name}</strong> </CardTitle>
                         <h5> {product.price} </h5>
                     </CardBody>

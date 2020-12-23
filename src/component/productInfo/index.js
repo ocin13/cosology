@@ -37,11 +37,19 @@ export class ProductInfo extends Component {
                                 <p><i className="fa fa-heart-o"></i> add to wishes list</p>
                             </div>
                             <div className="row">
-                                    <p>categories: {this.props.product.description} </p>
+                                    <p>categories: {this.props.product.category} </p>
                             </div>
                     </div>
                 </div>
                 <hr></hr>
+                <div className="row row-content px-3">
+                                <div className="col-12 text-left mb-3">
+                                    <h3>description</h3>
+                                </div>
+                                <div className="orange-line mb-5 mt-3"></div>
+                                <p className="pr-5"> {this.props.product.description} </p>
+                 </div>
+                 <hr></hr>
                 <div className="row py-5">
                     <div className="col-12">
                         <h2>related products</h2>

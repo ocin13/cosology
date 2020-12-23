@@ -20,7 +20,7 @@ class Header extends Component {
         return (
             <Navbar className="navbar-site" sticky="top" expand="md">
                         <div className="container">
-                            <NavbarBrand className="mr-auto brand"><Link to='/home' className="brandLink">Cosology</Link></NavbarBrand>
+                            <NavbarBrand className="mr-auto brand"><Link to='/home' className="brandLink">Cosylogy</Link></NavbarBrand>
                             <NavbarToggler onClick={(event) => this.toggleNav(event)} ><i className={!this.state.isNavOpen ? "fa fa-bars" : "fa fa-times"} id="toggleButton"></i></NavbarToggler>
                             <Collapse navbar isOpen={this.state.isNavOpen}>
                                 <Nav className="ml-auto" navbar>

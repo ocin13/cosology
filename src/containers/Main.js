@@ -12,13 +12,16 @@ import About from './about';
 import ProductInfo from '../component/productInfo';
 import ArticleInfo from '../component/articleInfo';
 import ProductCard from '../component/product-card';
+import {CATEGORIES} from '../shared/categories'
+import { toNumber } from 'reactstrap/lib/utils';
 
 class Main extends Component {
     constructor(props){
         super(props);
         this.state = {
             products: PRODUCTS,
-            articles: ARTICLES
+            articles: ARTICLES,
+            categories: CATEGORIES
         }
     }
     render() {
@@ -33,7 +36,10 @@ class Main extends Component {
         }
         const ArticleInfoWithId = ({match}) => {
             return(
-                <ArticleInfo article={this.state.articles.filter(article => article.id == +match.params.idArticle)[0]} />
+                <ArticleInfo 
+                    articles={this.state.articles.filter(article => article.featured === true,[0])}
+                    article={this.state.articles.filter(article => article.id == +match.params.idArticle)[0]} 
+                />
             );
         }
         const Home = () => {
@@ -49,8 +55,8 @@ class Main extends Component {
                 <Route exact path='/' component={Home} /> 
                 <Route path='/products/:idProduct' component={ProductInfoWithId}/>
                 <Route path='/shop' render={() => <Shop />} />
-                <Route path='blog/:idArticle' component={ArticleInfoWithId}/>
-                <Route path='/blog' render={() => <Blog />} />
+                <Route path='/blog/:idArticle' component={ArticleInfoWithId}/>
+                <Route path='/blog' render={() => <Blog articles={this.state.articles} categories={this.state.categories} latestArticles={this.state.articles.filter(article => article.featured === true,[0])}/>} />
                 <Route path='/aboutus' render={() => <About />} />
                 <Route path='/contactus' render={() => <Contact />} />
                 <Redirect to="/" /> 
