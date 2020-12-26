@@ -7,7 +7,8 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          isNavOpen: false
+          isNavOpen: false,
+          itemsNumber: this.props.cart.length
         };
     }
 
@@ -58,7 +59,7 @@ class Header extends Component {
                                     </NavItem>
                                     <NavItem>
                                         <NavLink className="nav-link" to="/cart" onClick={(event) => this.toggleNav(event)}>
-                                            <span><i className="fa fa-shopping-cart navbar-icons" ><Badge color="danger" pill>2</Badge></i></span>
+                                            <span><i className="fa fa-shopping-cart navbar-icons" >{this.props.cart.length? <Badge color="danger" pill> {this.props.cart.length } </Badge>: <div></div>}</i></span>
                                         </NavLink>
                                     </NavItem>
                                 </Nav>

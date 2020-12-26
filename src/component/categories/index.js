@@ -3,17 +3,20 @@ import {Card,CardImg,CardTitle,CardImgOverlay} from 'reactstrap'
 import Zoom from 'react-reveal/Zoom';
 import './style.css';
 import {CATEGORIES} from '../../shared/categories'
+import {Link} from 'react-router-dom'
 
 function Category({category}){
     return(
         <Zoom>
             <Card className="card-categories" inverse>
-                <CardImg style={{height:"400px", width: "100%"}} className='img-fluid image-categories-card' src={category.image} alt={category.name}  />
-                <CardImgOverlay className="text-right">
-                <CardTitle tag="h2" className="cart-categories-text" >{category.name}</CardTitle>
-                <div className="red-line"></div>
-                    <small className="text-dark"> {category.type} </small>
-                </CardImgOverlay>
+                <Link to='/product-slider' className="website-links">
+                    <CardImg style={{height:"400px", width: "100%"}} className='img-fluid image-categories-card' src={category.image} alt={category.name}  />
+                    <CardImgOverlay className="text-right">
+                    <CardTitle tag="h2" className="cart-categories-text" >{category.name}</CardTitle>
+                    <div className="red-line"></div>
+                        <small className="text-dark"> {category.type} </small>
+                    </CardImgOverlay>
+                </Link>
             </Card>
         </Zoom>
     )
@@ -39,7 +42,7 @@ class Categories extends Component {
             );
         });
         return (
-            <div className="row row-content">
+            <div className="row row-content px-md-5">
                 {categories}
             </div>
         )

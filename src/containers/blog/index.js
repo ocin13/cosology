@@ -14,10 +14,10 @@ function AboutCard(){
                     </CardBody>
                     <CardImg src='https://cdn.pixabay.com/photo/2016/03/23/08/34/beautiful-1274361_1280.jpg' alt='about us' className="about-card-image"/>
                     <CardBody>
-                        <CardText className="my-3"> <small>If you need to get high quality cosmetics at affordable prices, Cosology is the right place for you! Here you can
+                        <CardText className="my-3 d-none d-lg-block"> <small>If you need to get high quality cosmetics at affordable prices, Cosology is the right place for you! Here you can
                              find wide assortment of world famous brands and find what you need. Our mission is to deliver every woman a
                              piece of beauty to make her happy and to highlight her beauty and personal individuality by means of cosmetics. </small></CardText>
-                        <small className="text-primary">Manager :  <strong>chaima farhani </strong>--- date : <strong>12/13/1991</strong></small>
+                        <small className="text-primary">co-founder :  <strong>chaima farhani </strong>on date : <strong>12/13/2020</strong></small>
                     </CardBody>
                 </Link>
             </Card>
@@ -43,10 +43,10 @@ function ArticlesCard({article}){
                         </div>
                     </div>
                     <CardImg src={article.image} alt={article.title} className="article-card-image"/>
-                    <CardBody>
+                    <CardBody className="pb-5">
+                        <small className="text-info">published by :  <strong>{article.author} </strong>--- date : <strong>{date}</strong></small>
                         <CardTitle className="article-card-title"> <strong>{article.title}</strong> </CardTitle>
                         <CardText> {article.text.slice(0,85)} </CardText>
-                        <small className="text-danger">published by :  <strong>{article.author} </strong>--- date : <strong>{date}</strong></small>
                     </CardBody>
                 </Link>
             </Card>
@@ -59,22 +59,22 @@ class Blog extends Component {
     render() {
         const categories = this.props.categories.map(category => {
             return(
-                <div className="col-12 col-md-5 my-3">
-                    <NavLink className="nav-link-blog mx-3" to='/blog' key={category.id}>{category.name}</NavLink>
+                <div className="col-12 col-lg-5 my-3">
+                    <NavLink className="nav-link-categories website-links mx-3" to='/blog' key={category.id}>{category.name}</NavLink>
                 </div>
             );
         });
         const latestArticles = this.props.latestArticles.map(article => {
             return(
-                <Fade in key={article.id}>
-                    <ListGroupItem className="blog-list-name" ><Link className="link" to={`/blog/${article.id}`}>{article.title}</Link></ListGroupItem>
-                </Fade>
+                
+                    <ListGroupItem key={article.id} className="blog-list-name" ><Link className="link" to={`/blog/${article.id}`}>{article.title}</Link></ListGroupItem>
+
                 
             );
         });
         const articles = this.props.articles.map(article => {
             return(
-                    <div className='col-12 col-md-6 px-5'>
+                    <div className='col-12 col-lg-6 px-3'>
                         <ArticlesCard key={article.id} article={article} />
                     </div>
             );
@@ -109,7 +109,7 @@ class Blog extends Component {
                                     </NavItem>
                                     <NavItem>
                                         <NavLink className="nav-link-blog mx-3" to="/gallery">
-                                             Self Care Health
+                                             Health
                                         </NavLink>
                                     </NavItem>
                                     <NavItem>
@@ -145,6 +145,7 @@ class Blog extends Component {
                                             </ListGroup>
                                 </div>
                             </div>
+                            <hr className="my-5"></hr>
                             <div className='row mb-5'>
                                 <div className="col">
                                     <h3 className="mb-4">Categories</h3>
@@ -153,6 +154,7 @@ class Blog extends Component {
                                     </div>
                                 </div>
                             </div>
+                            <hr className="my-5"></hr>
                             <div className="row">
                                 <AboutCard />
                             </div>

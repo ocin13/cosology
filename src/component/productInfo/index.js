@@ -5,11 +5,14 @@ import ProductCard from '../product-card';
 import './style.css'
 
 export class ProductInfo extends Component {
+    addToCart(productId,quantity){
+        this.props.updateCart(productId,quantity);
+    }
     render() {
         const relatedProducts = this.props.products.map(product => {
             return(
                 
-                    <ProductCard key={product.id} product={product}/>
+                    <ProductCard key={product.id} product={product} addToCart={(productId,quantity) => this.addToCart(productId,quantity)}/>
                 
             );
         });
@@ -28,8 +31,8 @@ export class ProductInfo extends Component {
                                 <div className="col-12 col-md-3 mb-3">
                                     <Input type="number" className="productQuantity mx-auto " value={1}/>
                                 </div>
-                                <div className="col-12 col-md-9 ">
-                                    <Button className="addToCartButton">Add To Cart</Button>
+                                <div className="col-12 col-md-9 " onClick={() => this.addToCart(this.props.product.id,1)}>
+                                    <Button  className="addToCartButton">Add To Cart</Button>
                                 </div>
                             </div>
                             <hr></hr>

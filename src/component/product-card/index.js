@@ -4,10 +4,14 @@ import './style.css';
 import Bounce from 'react-reveal/Bounce';
 import {Link} from 'react-router-dom';
 
-export default function ProductCard({product}) {
+export default function ProductCard(props) {
+    const {product} = props
     const [Favorite, setFavorite] = useState(false)
     const addToFavorite = (e) => {
         setFavorite(!Favorite);
+    }
+    const addToCart = (productId,quantity) => {
+        props.addToCart(productId,quantity)
     }
     return (
         <div className="col-12 col-md-3 text-center product-card-frame">
@@ -17,7 +21,7 @@ export default function ProductCard({product}) {
                 <div className="col-4"><i className="fa fa-share"></i></div>
             </div>
             <Bounce>
-            <Card className="product-card px-5">
+            <Card className="product-card">
                <Link className="website-links" to={`/products/${product.id}`}>
                 <CardImg src={product.image} alt={product.name} style={{height: '300px'}}/>
                     <CardBody>
@@ -29,7 +33,7 @@ export default function ProductCard({product}) {
             </Card>
             </Bounce>
             
-            <Button className="add-cart-button">Add To Cart</Button>
+            <Button className="add-cart-button" onClick={() => addToCart(product.id,1)}>Add To Cart</Button>
             
         </div>
     )

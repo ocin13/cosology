@@ -23,9 +23,10 @@ export function ArticlesCard({article}){
                     </div>
                     <CardImg src={article.image} alt={article.title} className="article-card-image"/>
                     <CardBody>
+                        <small className="text-info">published by :  <strong>{article.author} </strong>--- date : <strong>{date}</strong></small>
                         <CardTitle className="article-card-title"> <strong>{article.title}</strong> </CardTitle>
                         <CardText> {article.text.slice(0,85)} </CardText>
-                        <small className="text-danger">published by :  <strong>{article.author} </strong>--- date : <strong>{date}</strong></small>
+                        
                     </CardBody>
                 </Link>
             </Card>
