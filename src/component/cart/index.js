@@ -18,14 +18,14 @@ function EmptyCart(){
 function FillCart(props){
     const items = props.cart.map(item => {
         return(
-            <div className="row my-3 px-3">
-                <div className="col-2 col-md-2">
+            <div className="row my-3 px-3 text-center">
+                <div className="col-12 col-md-2">
                     <img src={item.image} alt={item.name} height={80} width={80} />
                 </div>
-                <div className="col-6 col-md-6 my-auto">
+                <div className="col-12 col-md-6 my-auto text-center py-5">
                     <div key={item.id}> {item.name}--<strong>${item.price}</strong></div>
                 </div>
-                <div className="col-4 my-auto" onClick={() => props.deleteFromCart(item.id)}>
+                <div className="col-12 col-md-4 my-auto" onClick={() => props.deleteFromCart(item.id)}>
                     <Button className="ml-auto" color="danger" > Remove </Button>
                 </div>
             </div>
@@ -34,7 +34,7 @@ function FillCart(props){
     });
     const numbers = props.cart.map(item => item.price);
     function getSum(total, num) {
-        return total + Math.round(num);
+        return total + num;
       }
       const total = numbers.reduce(getSum, 0);
     return(
@@ -42,9 +42,9 @@ function FillCart(props){
             <h2 className="mb-5 mx-2">continue to check-out</h2>
             <div className="col-12 row-content">
                 <div className="mb-5">{items}</div>
-                <ListGroupItem className="mx-2">
-                    <ListGroupItem >your total price is: <strong>${total}</strong></ListGroupItem>
-                </ListGroupItem>
+                <div className="mx-2 text-center">
+                    <div ><h4>your total price is:</h4> <h2>${total}</h2></div>
+                </div>
                 <div className="mx-auto col-10 col-md-3" >
                     <Button  className="mt-5" size="lg" color="success"> Continue To Check-Out </Button>
                 </div>

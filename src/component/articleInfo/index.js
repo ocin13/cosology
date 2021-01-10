@@ -1,10 +1,48 @@
 import React, { Component } from 'react';
-import './style.css'
+import './style.css';
+import {Col,Row,Input,Label,Form} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import ArticlesCard from '../featuredArticles'
-export class ArticleInfo extends Component {
-    render() {
+import Button from 'reactstrap/lib/Button';
 
+export class ArticleInfo extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            author: '',
+            text: '',
+            comments: this.props.comments
+        }
+    }
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+    
+        this.setState({
+          [name]: value
+        });
+      }
+      handleSubmit(event){
+            this.addComment();
+            this.resetForm();
+            event.preventDefault();
+      }
+    addComment(){
+        this.props.addComment(this.state.author,this.state.text,this.props.article.id)
+    }
+    resetForm(){
+        this.setState({author: '', text: ''})
+    }
+    render() {
+        const comments = this.state.comments.map(comment => {
+            return(
+                <div>
+                    <h5>{comment.author}</h5>
+                    <p>{comment.text} </p>
+                </div>
+            );
+        });
         return (
             <div className="container">
                 <div className="row row-content">
@@ -28,6 +66,26 @@ export class ArticleInfo extends Component {
                     </div>
                 </div>
                 <hr></hr>
+                <div className="col-12 my-5">
+                    {comments}
+                </div>
+                <hr></hr>
+                <div className="col-12 my-5">
+                <form onSubmit={(event) => this.handleSubmit(event)}>
+                    <Row>
+                        <Col md={12}>
+                            <Label for="exampleEmail">your comment</Label>
+                            <Input type="text" name="author" className="px-3 py-3 mb-2" value={this.state.author}  onChange={(event) => this.handleInputChange(event)} placeholder="Your Name"/>
+                        </Col>
+                        <Col md={12}>
+                            <textarea type="text" name="text" className="px-3 py-3 " value={this.state.text} onChange={(event) => this.handleInputChange(event)} rows="3" style={{width:'100%'}} placeholder="Comment"/>
+                        </Col>
+                        <Col md={12}>
+                            <Button color="danger" type="submit" value="Submit" >Submit</Button>
+                        </Col>
+                    </Row>
+                </form>
+                </div>
             </div>
         )
     }

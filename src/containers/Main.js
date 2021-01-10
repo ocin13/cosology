@@ -13,6 +13,8 @@ import ProductInfo from '../component/productInfo';
 import ArticleInfo from '../component/articleInfo';
 import ProductCard from '../component/product-card';
 import {CATEGORIES} from '../shared/categories'
+import {BRANDS} from '../shared/brands'
+import {COUNTRIES} from '../shared/countries'
 import { toNumber } from 'reactstrap/lib/utils';
 import ProductSlider from '../component/productSlider'
 import Cart from '../component/cart';
@@ -23,9 +25,22 @@ class Main extends Component {
         this.state = {
             products: PRODUCTS,
             articles: ARTICLES,
+            comments: [],
             categories: CATEGORIES,
+            countries: COUNTRIES,
+            brands: BRANDS,
             cart: []
         }
+    }
+    addComment(author,text,articleId){
+        const idComment = this.state.comments.length;
+        const newComment = {
+            id: idComment,
+            author: author,
+            text: text,
+            articleId: articleId
+        }
+        this.setState({comments: this.state.comments.concat(newComment)})
     }
     updateCart(productId,quantity){
         const newProduct = this.state.products.filter(product => product.id == productId)[0];
@@ -51,6 +66,8 @@ class Main extends Component {
                 <ArticleInfo 
                     articles={this.state.articles.filter(article => article.featured === true,[0])}
                     article={this.state.articles.filter(article => article.id == +match.params.idArticle)[0]} 
+                    addComment={(author,text,articleId) => this.addComment(author,text,articleId)}
+                    comments={this.state.comments.filter(comment => comment.articleId == +match.params.idArticle,[0])}
                 />
             );
         }
@@ -66,7 +83,7 @@ class Main extends Component {
               <Switch>
                 <Route exact path='/' component={Home} /> 
                 <Route path='/products/:idProduct' component={ProductInfoWithId}/>
-                <Route path='/shop' render={() => <Shop />} />
+                <Route path='/shop' render={() => <Shop products={this.state.products} categories={this.state.categories} brands={this.state.brands} countries={this.state.countries} />} />
                 <Route path='/blog/:idArticle' component={ArticleInfoWithId}/>
                 <Route path='/blog' render={() => <Blog articles={this.state.articles} categories={this.state.categories} latestArticles={this.state.articles.filter(article => article.featured === true,[0])}/>} />
                 <Route path='/aboutus' render={() => <About />} />

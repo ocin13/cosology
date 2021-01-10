@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import './style.css';
-import {Card,CardBody,CardTitle,CardText,CardImg} from 'reactstrap';
+import {Card,CardBody,CardTitle,CardText,CardImg,Col,Row,FormGroup,Input,Label} from 'reactstrap';
 import Fade from 'react-reveal/Fade';
 import {Link} from 'react-router-dom'
 

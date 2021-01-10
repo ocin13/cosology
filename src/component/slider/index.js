@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect}  from 'react';
 import Fade from 'react-reveal/Fade';
+import {Link} from 'react-router-dom';
 import {ITEMS} from '../../shared/slider';
 import './style.css'
 import {
@@ -50,7 +51,7 @@ import Button from 'reactstrap/lib/Button';
           <Fade bottom>
           <div className="caption col-12 col-md-4">
             <CarouselCaption captionHeader={item.caption} className="slider-caption d-none d-md-block mb-5" />
-            <Button className="button-slider ml-5 mt-5" color="danger" >Discover Now</Button>
+            <Link to="/shop" className="website-links"><Button className="button-slider ml-5 mt-5" color="danger" >Discover Now</Button></Link>
           </div>
           </Fade>
           
